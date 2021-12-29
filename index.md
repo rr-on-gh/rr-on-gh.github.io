@@ -3,4 +3,5 @@ layout: default
 title: Rakshith Rao
 ---
 
-## Hello World!
+ - [Github](https://github.com/rr-on-gh)
+ - [LinkedIn](https://www.linkedin.com/in/rakshithrao/)

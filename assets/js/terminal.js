@@ -30,6 +30,13 @@ class TerminalAnimation {
     for (let i = 0; i < this.commands.length; i++) {
       const command = this.commands[i];
       await this.typeCommand(command.cmd);
+      
+      // Hide the cursor after typing the command
+      const cursorElement = document.querySelector('.cursor');
+      if (cursorElement) {
+        cursorElement.style.display = 'none';
+      }
+      
       await this.delay(command.delay);
 
       if (i < this.commands.length - 1) {

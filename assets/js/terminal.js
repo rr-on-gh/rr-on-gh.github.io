@@ -5,7 +5,7 @@ class TerminalAnimation {
       { cmd: './rao.sh --init', delay: 1000 },
       { cmd: '', delay: 500 }
     ];
-    
+
     this.outputs = [
       { text: 'Initializing rao.sh environment...', type: 'info', delay: 800 },
       { text: 'Loading profile data...', type: 'info', delay: 600 },
@@ -20,7 +20,7 @@ class TerminalAnimation {
       { text: '', delay: 500 },
       { text: 'Welcome to rao.sh! Launching website...', type: 'success', delay: 800 }
     ];
-    
+
     this.currentCommandIndex = 0;
     this.currentOutputIndex = 0;
     this.isTyping = false;
@@ -40,7 +40,7 @@ class TerminalAnimation {
       const command = this.commands[i];
       await this.typeCommand(command.cmd);
       await this.delay(command.delay);
-      
+
       if (i < this.commands.length - 1) {
         this.addNewLine();
       }
@@ -50,7 +50,7 @@ class TerminalAnimation {
   async typeCommand(text) {
     const commandElement = document.getElementById('typing-command');
     commandElement.textContent = '';
-    
+
     for (let i = 0; i < text.length; i++) {
       commandElement.textContent += text[i];
       await this.delay(50 + Math.random() * 50); // Vary typing speed
@@ -59,20 +59,20 @@ class TerminalAnimation {
 
   async showOutputs() {
     const outputContainer = document.getElementById('terminal-output');
-    
+
     for (const output of this.outputs) {
       if (output.text) {
         const outputLine = document.createElement('div');
         outputLine.className = `output-line ${output.type || ''}`;
         outputContainer.appendChild(outputLine);
-        
+
         // Type out the output
         for (let i = 0; i < output.text.length; i++) {
           outputLine.textContent += output.text[i];
           await this.delay(20);
         }
       }
-      
+
       await this.delay(output.delay);
     }
   }
@@ -88,10 +88,10 @@ class TerminalAnimation {
   showMainContent() {
     const loader = document.getElementById('terminal-loader');
     const mainContent = document.getElementById('main-content');
-    
+
     // Fade out terminal
     loader.classList.add('fade-out');
-    
+
     // Show main content
     setTimeout(() => {
       loader.style.display = 'none';
@@ -108,7 +108,7 @@ class TerminalAnimation {
 document.addEventListener('DOMContentLoaded', () => {
   // Check if user has seen the animation before (optional)
   const hasSeenAnimation = sessionStorage.getItem('rao-sh-animation-seen');
-  
+
   if (!hasSeenAnimation) {
     const terminal = new TerminalAnimation();
     terminal.init();
@@ -124,12 +124,12 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   // Add typing effect to code blocks
   const codeBlocks = document.querySelectorAll('.code-block');
-  
+
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   };
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, observerOptions);
-  
+
   // Observe elements for scroll animations
   document.querySelectorAll('.content-section, .code-block').forEach(el => {
     el.style.opacity = '0';

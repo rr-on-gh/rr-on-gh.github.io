@@ -1,1 +1,17 @@
 .idea
+.history
+.vscode
+*.iml
+.idea
+*.log
+*.txt
+.DS_Store
+build
+Gemfile*
+_site
+*.gem
+*.rb
+*.rbc
+*.sassc
+*.scssc
+config.ru

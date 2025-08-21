@@ -1,17 +1,23 @@
-```markdown
 ---
 layout: default
-title: Content
+title: Projects
 ---
 
-## 2024
-- [Reduce code duplication in load testing and synthetic monitoring using Amazon CloudWatch Synthetics](https://aws.amazon.com/blogs/mt/reduce-code-duplication-in-load-testing-and-synthetic-monitoring-using-amazon-cloudwatch-synthetics/){:target="_blank"}
-- [AWS Summit London 2024 - Operating a GenAI service at scale](https://www.youtube.com/watch?v=bkVtgjAHOIk){:target="_blank"}
-
-## 2023
-- [Introducing the Amazon Linux 2023 runtime for AWS Lambda](https://aws.amazon.com/blogs/compute/introducing-the-amazon-linux-2023-runtime-for-aws-lambda/){:target="_blank"}
-
-## 2022
-- [Back up and restore Kafka topic data using Amazon MSK Connect](https://aws.amazon.com/blogs/big-data/back-up-and-restore-kafka-topic-data-using-amazon-msk-connect/){:target="_blank"}
-
-```
+<div class="content-section">
+  <h2>Projects & Work</h2>
+  
+  <div class="code-block">
+    <span class="keyword">const</span> <span class="property">projects</span> = [<br>
+    &nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">name</span>: <span class="string">"Terminal Portfolio"</span>,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">description</span>: <span class="string">"Interactive terminal-style personal website"</span>,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">tech</span>: [<span class="string">"Jekyll"</span>, <span class="string">"JavaScript"</span>, <span class="string">"CSS"</span>],<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="property">status</span>: <span class="string">"active"</span><br>
+    &nbsp;&nbsp;}<br>
+    ];
+  </div>
+  
+  <p style="text-align: center; color: var(--text-secondary); margin-top: 40px;">
+    More projects coming soon...
+  </p>
+</div>

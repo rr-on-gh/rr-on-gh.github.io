@@ -28,6 +28,13 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh;
+}
+
+#main-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Terminal Loader */
@@ -156,6 +163,13 @@ body {
   font-size: 20px;
   font-weight: 700;
   color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-brand:hover {
+  color: var(--accent-green);
+  transform: scale(1.05);
 }
 
 .bracket {
@@ -199,7 +213,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
-  min-height: calc(100vh - 200px);
+  flex: 1;
 }
 
 /* Hero Section */
@@ -379,31 +393,36 @@ body {
 .footer {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
-  padding: 40px 0;
-  margin-top: 80px;
+  padding: 20px 0;
+  margin-top: auto;
 }
 
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
 }
 
-.social-links {
-  display: flex;
-  gap: 20px;
-}
-
-.social-link {
+.footer-content p {
+  font-size: 0.7rem;
   color: var(--text-secondary);
+  margin: 0;
+}
+
+.kiro-credit {
+  margin-top: 4px !important;
+}
+
+.kiro-credit a {
+  color: var(--accent-green);
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.social-link:hover {
-  color: var(--accent-green);
+.kiro-credit a:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -440,11 +459,7 @@ body {
     align-items: center;
   }
   
-  .footer-content {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
+
   
   .terminal-window {
     width: 95%;

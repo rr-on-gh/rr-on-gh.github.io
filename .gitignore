@@ -12,6 +12,4 @@ _site
 *.gem
 *.rb
 *.rbc
-*.sassc
-*.scssc
 config.ru

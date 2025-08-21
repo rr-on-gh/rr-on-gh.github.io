@@ -2,22 +2,13 @@
 class TerminalAnimation {
   constructor() {
     this.commands = [
-      { cmd: './rao.sh --init', delay: 1000 },
-      { cmd: '', delay: 500 }
+      { cmd: './rao.sh --init', delay: 1000 }
     ];
 
     this.outputs = [
       { text: 'Initializing rao.sh environment...', type: 'info', delay: 800 },
       { text: 'Loading profile data...', type: 'info', delay: 600 },
-      { text: 'Setting up development environment...', type: 'info', delay: 700 },
-      { text: 'Fetching project data...', type: 'info', delay: 500 },
-      { text: 'Configuring terminal interface...', type: 'info', delay: 600 },
-      { text: '✓ Environment ready', type: 'success', delay: 400 },
-      { text: '✓ Profile loaded successfully', type: 'success', delay: 300 },
-      { text: '✓ Development tools initialized', type: 'success', delay: 300 },
-      { text: '✓ Projects synchronized', type: 'success', delay: 300 },
-      { text: '✓ Interface configured', type: 'success', delay: 300 },
-      { text: '', delay: 500 },
+      { text: '✓ Environment ready', type: 'success', delay: 500 },
       { text: 'Welcome to rao.sh! Launching website...', type: 'success', delay: 800 }
     ];
 
@@ -104,19 +95,45 @@ class TerminalAnimation {
   }
 }
 
+// Function to start/restart the terminal animation
+function startTerminalAnimation() {
+  const loader = document.getElementById('terminal-loader');
+  const mainContent = document.getElementById('main-content');
+  const commandElement = document.getElementById('typing-command');
+  const outputContainer = document.getElementById('terminal-output');
+
+  // Reset the terminal state
+  loader.style.display = 'flex';
+  loader.classList.remove('fade-out');
+  mainContent.classList.remove('show');
+  commandElement.textContent = '';
+  outputContainer.innerHTML = '';
+
+  // Start the animation
+  const terminal = new TerminalAnimation();
+  terminal.init();
+}
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   // Check if user has seen the animation before (optional)
   const hasSeenAnimation = sessionStorage.getItem('rao-sh-animation-seen');
 
   if (!hasSeenAnimation) {
-    const terminal = new TerminalAnimation();
-    terminal.init();
+    startTerminalAnimation();
     sessionStorage.setItem('rao-sh-animation-seen', 'true');
   } else {
     // Skip animation for returning users in the same session
     document.getElementById('terminal-loader').style.display = 'none';
     document.getElementById('main-content').classList.add('show');
+  }
+
+  // Add click handler for nav brand
+  const navBrand = document.getElementById('nav-brand-trigger');
+  if (navBrand) {
+    navBrand.addEventListener('click', () => {
+      startTerminalAnimation();
+    });
   }
 });
 

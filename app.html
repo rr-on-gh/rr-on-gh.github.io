@@ -10,79 +10,83 @@
             line-height: 1.5;
             max-width: 800px;
             margin: 0 auto;
-            padding: 15px;
+            padding: 12px;
             color: #333;
             font-size: 14px;
         }
         h1 {
             color: #007AFF;
             border-bottom: 2px solid #007AFF;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-            font-size: 24px;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            font-size: 22px;
         }
         h2 {
-            color: #555;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 18px;
+            color: #333;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            font-size: 17px;
+            font-weight: 600;
         }
         h3 {
-            margin-top: 10px;
-            margin-bottom: 5px;
+            margin-top: 8px;
+            margin-bottom: 4px;
             font-size: 15px;
+            font-weight: 600;
         }
         p {
-            margin: 8px 0;
+            margin: 6px 0;
         }
         ul, ol {
-            margin: 8px 0;
-            padding-left: 25px;
+            margin: 6px 0;
+            padding-left: 20px;
         }
         li {
-            margin: 4px 0;
+            margin: 3px 0;
         }
         .feature {
-            background: #f5f5f7;
+            background: #f8f9fa;
             padding: 10px;
             margin: 8px 0;
-            border-radius: 6px;
+            border-radius: 4px;
+            border-left: 3px solid #007AFF;
         }
         .setting-item {
-            margin: 8px 0;
+            margin: 6px 0;
             padding-left: 15px;
         }
         code {
-            background: #e8e8e8;
-            padding: 2px 5px;
+            background: #e9ecef;
+            padding: 1px 4px;
             border-radius: 3px;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
         .contact {
-            background: #fff3cd;
-            padding: 12px;
-            border-radius: 6px;
-            margin-top: 20px;
+            background: #fff8e1;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 15px;
+            border: 1px solid #ffd54f;
         }
         .lang-switch {
             text-align: right;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         .lang-switch button {
             background: #007AFF;
             color: white;
             border: none;
-            padding: 6px 14px;
-            border-radius: 6px;
+            padding: 5px 12px;
+            border-radius: 4px;
             cursor: pointer;
             font-size: 13px;
             margin-left: 8px;
         }
         .lang-switch button:hover {
-            background: #0051D5;
+            background: #0056b3;
         }
         .lang-switch button.active {
-            background: #555;
+            background: #343a40;
         }
         .lang-content {
             display: none;
@@ -91,26 +95,39 @@
             display: block;
         }
         footer {
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid #ddd;
+            margin-top: 25px;
+            padding-top: 12px;
+            border-top: 1px solid #e9ecef;
             text-align: center;
-            color: #888;
-            font-size: 13px;
+            color: #6c757d;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
-    <div class="lang-switch">
-        <button onclick="switchLang('en')" id="btn-en" class="active">English</button>
-        <button onclick="switchLang('de')" id="btn-de">Deutsch</button>
-    </div>
-
     <div id="content-en" class="lang-content active">
-    <h1>Practice German</h1>
+    <h1 style="display: flex; justify-content: space-between; align-items: center;">
+        <span>Practice German</span>
+        <span style="font-size: 24px;">
+            <span role="img" aria-label="UK Flag" onclick="switchLang('en')" style="cursor: pointer;">🇬🇧</span>
+            <span role="img" aria-label="Germany Flag" onclick="switchLang('de')" style="cursor: pointer; margin-left: 10px;">🇩🇪</span>
+        </span>
+    </h1>
     <p>Master everyday German conversations through interactive speaking practice.</p>
 
-    <h2>Features</h2>
+    <div style="background: #f0f0f0; padding: 10px; border-radius: 4px; margin-bottom: 15px; font-size: 13px;">
+        <strong>Contents:</strong>
+        <ul style="margin: 5px 0; padding-left: 20px;">
+            <li><a href="#features" style="color: #007AFF; text-decoration: none;">Features</a></li>
+            <li><a href="#settings" style="color: #007AFF; text-decoration: none;">Settings</a></li>
+            <li><a href="#usage" style="color: #007AFF; text-decoration: none;">How to Use</a></li>
+            <li><a href="#privacy" style="color: #007AFF; text-decoration: none;">Privacy</a></li>
+            <li><a href="#troubleshooting" style="color: #007AFF; text-decoration: none;">Troubleshooting</a></li>
+            <li><a href="#contact" style="color: #007AFF; text-decoration: none;">Contact Support</a></li>
+        </ul>
+    </div>
+
+    <h2 id="features">Features</h2>
     
     <div class="feature">
         <h3>Reading Practice</h3>
@@ -161,7 +178,7 @@
         <p>Your progress automatically syncs across all your iOS devices using iCloud.</p>
     </div>
 
-    <h2>Settings</h2>
+    <h2 id="settings">Settings</h2>
 
     <div class="setting-item">
         <h3>Sentence Source</h3>
@@ -201,7 +218,7 @@
         <p>When using GenAI, add specific keywords to customize generated sentences to your interests.</p>
     </div>
 
-    <h2>How to Use</h2>
+    <h2 id="usage">How to Use</h2>
 
     <h3>Reading Practice</h3>
     <ol>
@@ -224,7 +241,7 @@
         <li>Review your transcription and feedback</li>
     </ol>
 
-    <h2>Privacy</h2>
+    <h2 id="privacy">Privacy</h2>
     <p>Practice German respects your privacy:</p>
     <ul>
         <li>Microphone access is only used for speech recognition during practice</li>
@@ -234,7 +251,7 @@
         <li>iCloud sync is optional and controlled by your device settings</li>
     </ul>
 
-    <h2>Troubleshooting</h2>
+    <h2 id="troubleshooting">Troubleshooting</h2>
 
     <h3>Speech Recognition Not Working</h3>
     <ul>
@@ -260,11 +277,12 @@
         <li>Wait a few moments for sync to complete</li>
     </ul>
 
-    <div class="contact">
+    <div class="contact" id="contact">
         <h2>Contact Support</h2>
         <p>Need help? Have feedback or suggestions?</p>
         <p>Email: <a href="mailto:app@rao.sh">app@rao.sh</a></p>
         <p>We typically respond within 24-48 hours.</p>
+    </div>
     </div>
 
     <footer style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #ddd; text-align: center; color: #888; font-size: 13px;">
@@ -273,8 +291,26 @@
     </div>
 
     <div id="content-de" class="lang-content">
-    <h1>Deutsch Üben</h1>
+    <h1 style="display: flex; justify-content: space-between; align-items: center;">
+        <span>Deutsch Üben</span>
+        <span style="font-size: 24px;">
+            <span role="img" aria-label="UK Flag" onclick="switchLang('en')" style="cursor: pointer;">🇬🇧</span>
+            <span role="img" aria-label="Germany Flag" onclick="switchLang('de')" style="cursor: pointer; margin-left: 10px;">🇩🇪</span>
+        </span>
+    </h1>
     <p>Meistern Sie alltägliche deutsche Konversationen durch interaktives Sprechtraining.</p>
+
+    <div style="background: #f0f0f0; padding: 10px; border-radius: 4px; margin-bottom: 15px; font-size: 13px;">
+        <strong>Inhaltsverzeichnis:</strong>
+        <ul style="margin: 5px 0; padding-left: 20px;">
+            <li><a href="#features-de" style="color: #007AFF; text-decoration: none;">Funktionen</a></li>
+            <li><a href="#settings-de" style="color: #007AFF; text-decoration: none;">Einstellungen</a></li>
+            <li><a href="#usage-de" style="color: #007AFF; text-decoration: none;">Verwendung</a></li>
+            <li><a href="#privacy-de" style="color: #007AFF; text-decoration: none;">Datenschutz</a></li>
+            <li><a href="#troubleshooting-de" style="color: #007AFF; text-decoration: none;">Fehlerbehebung</a></li>
+            <li><a href="#contact-de" style="color: #007AFF; text-decoration: none;">Support kontaktieren</a></li>
+        </ul>
+    </div>
 
     <h2>Funktionen</h2>
     
@@ -441,11 +477,7 @@
     <script>
         function switchLang(lang) {
             document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.lang-switch button').forEach(el => el.classList.remove('active'));
-            
             document.getElementById('content-' + lang).classList.add('active');
-            document.getElementById('btn-' + lang).classList.add('active');
-            
             document.documentElement.lang = lang;
         }
     </script>

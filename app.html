@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice German - Support</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            color: #333;
+            font-size: 14px;
+        }
+        h1 {
+            color: #007AFF;
+            border-bottom: 2px solid #007AFF;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        h3 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+        p {
+            margin: 8px 0;
+        }
+        ul, ol {
+            margin: 8px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 4px 0;
+        }
+        .feature {
+            background: #f5f5f7;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+        }
+        .setting-item {
+            margin: 8px 0;
+            padding-left: 15px;
+        }
+        code {
+            background: #e8e8e8;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .contact {
+            background: #fff3cd;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 15px;
+        }
+        .lang-switch button {
+            background: #007AFF;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            margin-left: 8px;
+        }
+        .lang-switch button:hover {
+            background: #0051D5;
+        }
+        .lang-switch button.active {
+            background: #555;
+        }
+        .lang-content {
+            display: none;
+        }
+        .lang-content.active {
+            display: block;
+        }
+        footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <button onclick="switchLang('en')" id="btn-en" class="active">English</button>
+        <button onclick="switchLang('de')" id="btn-de">Deutsch</button>
+    </div>
+
+    <div id="content-en" class="lang-content active">
+    <h1>Practice German</h1>
+    <p>Master everyday German conversations through interactive speaking practice.</p>
+
+    <h2>Features</h2>
+    
+    <div class="feature">
+        <h3>Reading Practice</h3>
+        <p>Learn new German phrases with English translations. Perfect for building vocabulary and understanding sentence structure.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Speaking Practice</h3>
+        <p>Record your German pronunciation and receive instant AI-powered feedback. Practice real conversations and improve your speaking skills.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Multiple Difficulty Levels</h3>
+        <p>Choose from A1 (beginner) to C2 (advanced) based on the Common European Framework of Reference for Languages (CEFR).</p>
+        <ul>
+            <li><strong>A1</strong> - Beginner: Basic phrases and simple sentences</li>
+            <li><strong>A2</strong> - Elementary: Common everyday situations</li>
+            <li><strong>B1</strong> - Intermediate: More complex conversations</li>
+            <li><strong>B2</strong> - Upper Intermediate: Detailed discussions</li>
+            <li><strong>C1</strong> - Advanced: Complex language use</li>
+            <li><strong>C2</strong> - Proficient: Near-native fluency</li>
+        </ul>
+    </div>
+
+    <div class="feature">
+        <h3>Real-World Scenarios</h3>
+        <p>Practice conversations in 8 different everyday situations:</p>
+        <ul>
+            <li>Stores/Shopping</li>
+            <li>Restaurants/Cafes</li>
+            <li>Doctor/Pharmacy</li>
+            <li>Salon/Barber</li>
+            <li>Parties/Social</li>
+            <li>Work/Office</li>
+            <li>Neighbors</li>
+            <li>Transport/Travel</li>
+        </ul>
+    </div>
+
+    <div class="feature">
+        <h3>Sentence Sources</h3>
+        <p><strong>Local Database</strong>: Practice with 350+ pre-loaded sentences across all levels and scenarios. Works offline.</p>
+        <p><strong>GenAI</strong>: Generate custom sentences using AI based on your preferences and keywords. Requires API key.</p>
+    </div>
+
+    <div class="feature">
+        <h3>iCloud Sync</h3>
+        <p>Your progress automatically syncs across all your iOS devices using iCloud.</p>
+    </div>
+
+    <h2>Settings</h2>
+
+    <div class="setting-item">
+        <h3>Sentence Source</h3>
+        <p>Choose between <strong>Local Database</strong> (default) or <strong>GenAI</strong> for sentence generation.</p>
+    </div>
+
+    <div class="setting-item">
+        <h3>AI Provider</h3>
+        <p>When using GenAI, select your preferred provider:</p>
+        <ul>
+            <li><strong>OpenAI</strong> (default) - Requires OpenAI API key</li>
+            <li><strong>Bedrock</strong> - Requires AWS Bedrock API key</li>
+        </ul>
+    </div>
+
+    <div class="setting-item">
+        <h3>API Keys</h3>
+        <p>Enter your API keys for AI-powered features. Keys are stored securely on your device.</p>
+        <ul>
+            <li><strong>OpenAI API Key</strong>: Get from <a href="https://platform.openai.com/api-keys">platform.openai.com</a></li>
+            <li><strong>Bedrock API Key</strong>: Bedrock is an AWS service. You need an <a href="https://signin.aws.amazon.com/signup?request_type=register">AWS account</a> and can get your API key from <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-keys.html">AWS Bedrock documentation</a></li>
+        </ul>
+    </div>
+
+    <div class="setting-item">
+        <h3>Language Level</h3>
+        <p>Select your current German proficiency level (A1-C2). Default is <strong>A2</strong>.</p>
+    </div>
+
+    <div class="setting-item">
+        <h3>Conversation Setting</h3>
+        <p>Choose the scenario you want to practice (stores, restaurants, doctor, etc.).</p>
+    </div>
+
+    <div class="setting-item">
+        <h3>Keywords (Optional)</h3>
+        <p>When using GenAI, add specific keywords to customize generated sentences to your interests.</p>
+    </div>
+
+    <h2>How to Use</h2>
+
+    <h3>Reading Practice</h3>
+    <ol>
+        <li>Tap <strong>Reading Practice</strong> on the home screen</li>
+        <li>Configure your level and setting in Settings</li>
+        <li>Tap <strong>Generate Sentences</strong></li>
+        <li>Read through the English and German translations</li>
+        <li>Swipe to see more sentences</li>
+    </ol>
+
+    <h3>Speaking Practice</h3>
+    <ol>
+        <li>Tap <strong>Speaking Practice</strong> on the home screen</li>
+        <li>Grant microphone and speech recognition permissions when prompted</li>
+        <li>Tap <strong>Get Next Sentence</strong></li>
+        <li>Read the English sentence</li>
+        <li>Tap <strong>Start Recording</strong> and speak the German translation</li>
+        <li>Tap <strong>Stop Recording</strong> when done</li>
+        <li>Tap <strong>Check Translation</strong> to receive AI feedback</li>
+        <li>Review your transcription and feedback</li>
+    </ol>
+
+    <h2>Privacy</h2>
+    <p>Practice German respects your privacy:</p>
+    <ul>
+        <li>Microphone access is only used for speech recognition during practice</li>
+        <li>Speech recognition is processed on-device when possible</li>
+        <li>API keys are stored securely on your device</li>
+        <li>No personal data is collected or shared</li>
+        <li>iCloud sync is optional and controlled by your device settings</li>
+    </ul>
+
+    <h2>Troubleshooting</h2>
+
+    <h3>Speech Recognition Not Working</h3>
+    <ul>
+        <li>Check microphone permissions in Settings > Privacy > Microphone</li>
+        <li>Check speech recognition permissions in Settings > Privacy > Speech Recognition</li>
+        <li>Ensure you have a stable internet connection</li>
+        <li>Speak clearly and at a moderate pace</li>
+    </ul>
+
+    <h3>GenAI Not Generating Sentences</h3>
+    <ul>
+        <li>Verify your API key is entered correctly in Settings</li>
+        <li>Check that you have API credits available</li>
+        <li>Ensure you have an internet connection</li>
+        <li>Try switching to Local Database mode</li>
+    </ul>
+
+    <h3>iCloud Sync Issues</h3>
+    <ul>
+        <li>Check that iCloud Drive is enabled in device Settings</li>
+        <li>Ensure you're signed in to iCloud</li>
+        <li>Check available iCloud storage</li>
+        <li>Wait a few moments for sync to complete</li>
+    </ul>
+
+    <div class="contact">
+        <h2>Contact Support</h2>
+        <p>Need help? Have feedback or suggestions?</p>
+        <p>Email: <a href="mailto:app@rao.sh">app@rao.sh</a></p>
+        <p>We typically respond within 24-48 hours.</p>
+    </div>
+
+    <footer style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #ddd; text-align: center; color: #888; font-size: 13px;">
+        <p>Practice German &copy; 2026</p>
+    </footer>
+    </div>
+
+    <div id="content-de" class="lang-content">
+    <h1>Deutsch Üben</h1>
+    <p>Meistern Sie alltägliche deutsche Konversationen durch interaktives Sprechtraining.</p>
+
+    <h2>Funktionen</h2>
+    
+    <div class="feature">
+        <h3>Leseübung</h3>
+        <p>Lernen Sie neue deutsche Sätze mit englischen Übersetzungen. Perfekt zum Aufbau von Vokabular und Verständnis der Satzstruktur.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Sprechübung</h3>
+        <p>Nehmen Sie Ihre deutsche Aussprache auf und erhalten Sie sofortiges KI-gestütztes Feedback. Üben Sie echte Gespräche und verbessern Sie Ihre Sprechfähigkeiten.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Mehrere Schwierigkeitsstufen</h3>
+        <p>Wählen Sie von A1 (Anfänger) bis C2 (Fortgeschritten) basierend auf dem Gemeinsamen Europäischen Referenzrahmen für Sprachen (GER).</p>
+        <ul>
+            <li><strong>A1</strong> - Anfänger: Grundlegende Phrasen und einfache Sätze</li>
+            <li><strong>A2</strong> - Grundstufe: Häufige Alltagssituationen</li>
+            <li><strong>B1</strong> - Mittelstufe: Komplexere Gespräche</li>
+            <li><strong>B2</strong> - Obere Mittelstufe: Detaillierte Diskussionen</li>
+            <li><strong>C1</strong> - Fortgeschritten: Komplexer Sprachgebrauch</li>
+            <li><strong>C2</strong> - Kompetent: Fast muttersprachliche Beherrschung</li>
+        </ul>
+    </div>
+
+    <div class="feature">
+        <h3>Realistische Szenarien</h3>
+        <p>Üben Sie Gespräche in 8 verschiedenen Alltagssituationen:</p>
+        <ul>
+            <li>Geschäfte/Einkaufen</li>
+            <li>Restaurants/Cafés</li>
+            <li>Arzt/Apotheke</li>
+            <li>Salon/Friseur</li>
+            <li>Partys/Soziales</li>
+            <li>Arbeit/Büro</li>
+            <li>Nachbarn</li>
+            <li>Transport/Reisen</li>
+        </ul>
+    </div>
+
+    <div class="feature">
+        <h3>Satzquellen</h3>
+        <p><strong>Lokale Datenbank</strong>: Üben Sie mit über 350 vorgeladenen Sätzen über alle Stufen und Szenarien. Funktioniert offline.</p>
+        <p><strong>GenAI</strong>: Generieren Sie benutzerdefinierte Sätze mit KI basierend auf Ihren Präferenzen und Schlüsselwörtern. Erfordert API-Schlüssel.</p>
+    </div>
+
+    <div class="feature">
+        <h3>iCloud-Synchronisation</h3>
+        <p>Ihr Fortschritt wird automatisch über alle Ihre iOS-Geräte mit iCloud synchronisiert.</p>
+    </div>
+
+    <h2>Einstellungen</h2>
+
+    <div class="setting-item">
+        <h3>Satzquelle</h3>
+        <p>Wählen Sie zwischen <strong>Lokale Datenbank</strong> (Standard) oder <strong>GenAI</strong> für die Satzgenerierung.</p>
+    </div>
+
+    <div class="setting-item">
+        <h3>KI-Anbieter</h3>
+        <p>Bei Verwendung von GenAI wählen Sie Ihren bevorzugten Anbieter:</p>
+        <ul>
+            <li><strong>OpenAI</strong> (Standard) - Erfordert OpenAI API-Schlüssel</li>
+            <li><strong>Bedrock</strong> - Erfordert AWS Bedrock API-Schlüssel</li>
+        </ul>
+    </div>
+
+    <div class="setting-item">
+        <h3>API-Schlüssel</h3>
+        <p>Geben Sie Ihre API-Schlüssel für KI-gestützte Funktionen ein. Schlüssel werden sicher auf Ihrem Gerät gespeichert.</p>
+        <ul>
+            <li><strong>OpenAI API-Schlüssel</strong>: Erhalten Sie von <a href="https://platform.openai.com/api-keys">platform.openai.com</a></li>
+            <li><strong>Bedrock API-Schlüssel</strong>: Bedrock ist ein AWS-Dienst. Sie benötigen ein <a href="https://signin.aws.amazon.com/signup?request_type=register">AWS-Konto</a> und können Ihren API-Schlüssel aus der <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-keys.html">AWS Bedrock-Dokumentation</a> erhalten</li>
+        </ul>
+    </div>
+
+    <div class="setting-item">
+        <h3>Sprachniveau</h3>
+        <p>Wählen Sie Ihr aktuelles Deutschniveau (A1-C2). Standard ist <strong>A2</strong>.</p>
+    </div>
+
+    <div class="setting-item">
+        <h3>Gesprächssituation</h3>
+        <p>Wählen Sie das Szenario, das Sie üben möchten (Geschäfte, Restaurants, Arzt usw.).</p>
+    </div>
+
+    <div class="setting-item">
+        <h3>Schlüsselwörter (Optional)</h3>
+        <p>Bei Verwendung von GenAI fügen Sie spezifische Schlüsselwörter hinzu, um generierte Sätze an Ihre Interessen anzupassen.</p>
+    </div>
+
+    <h2>Verwendung</h2>
+
+    <h3>Leseübung</h3>
+    <ol>
+        <li>Tippen Sie auf <strong>Leseübung</strong> auf dem Startbildschirm</li>
+        <li>Konfigurieren Sie Ihr Niveau und Ihre Einstellung in den Einstellungen</li>
+        <li>Tippen Sie auf <strong>Sätze generieren</strong></li>
+        <li>Lesen Sie die englischen und deutschen Übersetzungen</li>
+        <li>Wischen Sie, um weitere Sätze zu sehen</li>
+    </ol>
+
+    <h3>Sprechübung</h3>
+    <ol>
+        <li>Tippen Sie auf <strong>Sprechübung</strong> auf dem Startbildschirm</li>
+        <li>Erteilen Sie Mikrofon- und Spracherkennungsberechtigungen, wenn Sie dazu aufgefordert werden</li>
+        <li>Tippen Sie auf <strong>Nächsten Satz holen</strong></li>
+        <li>Lesen Sie den englischen Satz</li>
+        <li>Tippen Sie auf <strong>Aufnahme starten</strong> und sprechen Sie die deutsche Übersetzung</li>
+        <li>Tippen Sie auf <strong>Aufnahme stoppen</strong>, wenn Sie fertig sind</li>
+        <li>Tippen Sie auf <strong>Übersetzung prüfen</strong>, um KI-Feedback zu erhalten</li>
+        <li>Überprüfen Sie Ihre Transkription und das Feedback</li>
+    </ol>
+
+    <h2>Datenschutz</h2>
+    <p>Deutsch Üben respektiert Ihre Privatsphäre:</p>
+    <ul>
+        <li>Mikrofonzugriff wird nur für Spracherkennung während der Übung verwendet</li>
+        <li>Spracherkennung wird wenn möglich auf dem Gerät verarbeitet</li>
+        <li>API-Schlüssel werden sicher auf Ihrem Gerät gespeichert</li>
+        <li>Es werden keine persönlichen Daten gesammelt oder geteilt</li>
+        <li>iCloud-Synchronisation ist optional und wird durch Ihre Geräteeinstellungen gesteuert</li>
+    </ul>
+
+    <h2>Fehlerbehebung</h2>
+
+    <h3>Spracherkennung funktioniert nicht</h3>
+    <ul>
+        <li>Überprüfen Sie Mikrofonberechtigungen in Einstellungen > Datenschutz > Mikrofon</li>
+        <li>Überprüfen Sie Spracherkennungsberechtigungen in Einstellungen > Datenschutz > Spracherkennung</li>
+        <li>Stellen Sie sicher, dass Sie eine stabile Internetverbindung haben</li>
+        <li>Sprechen Sie klar und in moderatem Tempo</li>
+    </ul>
+
+    <h3>GenAI generiert keine Sätze</h3>
+    <ul>
+        <li>Überprüfen Sie, ob Ihr API-Schlüssel korrekt in den Einstellungen eingegeben wurde</li>
+        <li>Überprüfen Sie, ob Sie API-Guthaben verfügbar haben</li>
+        <li>Stellen Sie sicher, dass Sie eine Internetverbindung haben</li>
+        <li>Versuchen Sie, in den Modus Lokale Datenbank zu wechseln</li>
+    </ul>
+
+    <h3>iCloud-Synchronisationsprobleme</h3>
+    <ul>
+        <li>Überprüfen Sie, ob iCloud Drive in den Geräteeinstellungen aktiviert ist</li>
+        <li>Stellen Sie sicher, dass Sie bei iCloud angemeldet sind</li>
+        <li>Überprüfen Sie den verfügbaren iCloud-Speicher</li>
+        <li>Warten Sie einige Momente, bis die Synchronisation abgeschlossen ist</li>
+    </ul>
+
+    <div class="contact">
+        <h2>Support kontaktieren</h2>
+        <p>Brauchen Sie Hilfe? Haben Sie Feedback oder Vorschläge?</p>
+        <p>E-Mail: <a href="mailto:app@rao.sh">app@rao.sh</a></p>
+        <p>Wir antworten normalerweise innerhalb von 24-48 Stunden.</p>
+    </div>
+
+    <footer style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #ddd; text-align: center; color: #888; font-size: 13px;">
+        <p>Deutsch Üben &copy; 2026</p>
+    </footer>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-switch button').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById('content-' + lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+            
+            document.documentElement.lang = lang;
+        }
+    </script>
+</body>
+</html>

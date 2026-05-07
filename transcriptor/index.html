@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meeting Transcriptor — On-device automatic meeting transcripts for macOS</title>
+  <meta name="description" content="A macOS menu bar app that automatically transcribes your Zoom, Microsoft Teams, Google Meet, and Slack huddle calls on-device. Nothing leaves your Mac.">
+
+  <meta property="og:title" content="Meeting Transcriptor">
+  <meta property="og:description" content="On-device automatic meeting transcripts for macOS. Joins the meeting when you do, saves the transcript when you leave.">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        Meeting Transcriptor
+      </div>
+      <div class="nav-links">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#how" class="nav-link">How it works</a>
+        <a href="#install" class="nav-link">Install</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text-block">
+        <div class="eyebrow">macOS menu bar app</div>
+        <h1>On-device automatic meeting transcripts.</h1>
+        <p class="subtitle">Meeting Transcriptor quietly lives in your menu bar and starts a transcript the moment you join a <span class="accent-green">Zoom</span>, <span class="accent-blue">Microsoft Teams</span>, <span class="accent-green">Google Meet</span>, or <span class="accent-blue">Slack huddle</span> call. When you leave, it stops and saves the file. Nothing to click each time. Nothing leaves your Mac.</p>
+
+        <div class="btn-group">
+          <a href="downloads/MeetingTranscriptor.dmg" class="btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+            </svg>
+            Download for macOS
+          </a>
+        </div>
+
+        <div class="notary-badge" title="Signed with an Apple Developer ID and notarized by Apple. macOS Gatekeeper will open it without warnings.">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 15-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z"/>
+          </svg>
+          <span>Signed with Apple Developer ID &middot; Notarized by Apple</span>
+        </div>
+
+        <div class="meta-line">
+          <span class="dot green"></span> macOS 26 (Tahoe) or later
+          <span class="sep">&middot;</span>
+          Apple Silicon
+          <span class="sep">&middot;</span>
+          ~700 MB model
+        </div>
+      </div>
+
+      <div class="code-block" aria-label="Example transcript">
+        <div class="transcript-line"><span class="speaker you">You:</span> I think we should ship the new retention policy by end of quarter.</div>
+        <div class="transcript-line"><span class="speaker them">Them:</span> That works. What is the blocker on the data migration piece?</div>
+        <div class="transcript-line"><span class="speaker you">You:</span> Mostly the staging environment parity. Should be resolved by Friday.</div>
+        <div class="transcript-line"><span class="speaker them">Them:</span> OK I will update the roadmap and loop you in on the review.</div>
+      </div>
+    </section>
+
+    <section id="features" class="content-section">
+      <h2>What you get</h2>
+      <ul class="feature-grid">
+        <li>
+          <h3>Fully local</h3>
+          <p>Transcription runs on your Mac using the Apple Neural Engine. Audio never leaves the machine. Network is used once, for the initial model download.</p>
+        </li>
+        <li>
+          <h3>Auto-start for meetings</h3>
+          <p>Works with Zoom, Microsoft Teams, Google Meet, and Slack huddles. Opt-in once; transcription starts the instant a call begins and stops automatically when it ends.</p>
+        </li>
+        <li>
+          <h3>Lives in the menu bar</h3>
+          <p>A small icon at the top of your screen shows when a session is active. Click for the current file, reveal in Finder, or the transcripts folder.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="how" class="content-section">
+      <h2>How it works</h2>
+      <p class="how-intro">Turn on auto-start once in the menu. From that point on, Meeting Transcriptor watches for meetings across the apps you already use and handles the rest.</p>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-num">01</div>
+          <h3>You join a call</h3>
+          <p>Click your usual meeting link. No extra step, no bot invited to the call, no prompt in the middle of the conversation.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">02</div>
+          <h3>Transcription starts</h3>
+          <p>A quiet notification confirms Meeting Transcriptor is running. The menu bar icon switches to active and a new transcript file is created for this session.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">03</div>
+          <h3>You leave, it saves</h3>
+          <p>A few seconds after the call ends, the session closes and the file is finalized. Open it in Finder, paste it into notes, or hand it to your own follow-up workflow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="install" class="content-section">
+      <h2>Install</h2>
+      <ol class="install-list">
+        <li>
+          <span class="step-number">01</span>
+          <div>
+            <h3>Open the DMG</h3>
+            <p>Double-click the downloaded <code>MeetingTranscriptor.dmg</code>, then drag <strong>Meeting Transcriptor.app</strong> into your Applications folder.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-number">02</span>
+          <div>
+            <h3>Grant three permissions</h3>
+            <p>On first launch macOS will ask for Microphone, Speech Recognition, and Screen &amp; System Audio Recording. After granting the screen recording permission, fully quit the app (menu → Quit) and reopen it so macOS picks up the grant.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-number">03</span>
+          <div>
+            <h3>Turn on auto-start</h3>
+            <p>Click the mic icon in the menu bar and toggle <strong>Auto-start for Zoom / Teams / Meet</strong>. First run downloads the transcription model (~632 MB) and prepares it for the Apple Neural Engine, which takes 3–8 minutes. Every launch after that starts in seconds.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="callout">
+        <div class="callout-label">Recommended</div>
+        <p>Use headphones during meetings. External speakers cause your mic to pick up the remote side, which produces duplicated lines tagged as both <span class="accent-green">You</span> and <span class="accent-blue">Them</span>. Headphones keep the split clean.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Requirements</h2>
+      <ul class="req-list">
+        <li><span class="req-key">OS</span><span class="req-val">macOS 26 (Tahoe) or later</span></li>
+        <li><span class="req-key">Chip</span><span class="req-val">Apple Silicon (M1 or later)</span></li>
+        <li><span class="req-key">Disk</span><span class="req-val">~700 MB for the transcription model</span></li>
+        <li><span class="req-key">Network</span><span class="req-val">First launch only, for the model download</span></li>
+        <li><span class="req-key">Language</span><span class="req-val">English</span></li>
+        <li><span class="req-key">Signing</span><span class="req-val">Apple Developer ID, notarized by Apple</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2026 Meeting Transcriptor. Runs on your Mac, not ours.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
